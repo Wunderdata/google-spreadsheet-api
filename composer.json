@@ -20,6 +20,6 @@
     "phpunit/phpunit": "3.7.*"
   },
   "autoload": {
-    "psr-0": { "Wunderdata\\Google": "Wunderdata/Google" }
+    "psr-0": { "Wunderdata\\Google": "" }
   }
 }
