@@ -21,6 +21,10 @@ class Client
      */
     private $accessToken;
 
+    /**
+     * @param string $accessToken
+     * @param Browser $browser
+     */
     function __construct($accessToken, Browser $browser)
     {
         $this->accessToken = $accessToken;
@@ -48,6 +52,10 @@ class Client
         return $spreadsheets;
     }
 
+    /**
+     * @param Spreadsheet $spreadsheet
+     * @return array
+     */
     public function loadWorksheets(Spreadsheet $spreadsheet)
     {
         $headers = $this->createAuthorizationHeader();
@@ -64,6 +72,10 @@ class Client
         return $worksheets;
     }
 
+    /**
+     * @param Worksheet $worksheet
+     * @return CellFeed
+     */
     public function loadCellFeed(Worksheet $worksheet)
     {
         $response = $this->browser->get($worksheet->getCellFeedUrl(), $this->createAuthorizationHeader());
@@ -76,6 +88,21 @@ class Client
         return new CellFeed($cells);
     }
 
+    /**
+     * @param string $url
+     * @return CellFeed
+     */
+    public function loadCellFeedByUrl($url)
+    {
+        $sheet = new Worksheet();
+        $sheet->setCellFeedUrl($url);
+        return $this->loadCellFeed($sheet);
+    }
+
+    /**
+     * @param Worksheet $worksheet
+     * @return ListFeed
+     */
     public function loadListFeed(Worksheet $worksheet)
     {
         $response = $this->browser->get($worksheet->getListFeedUrl(), $this->createAuthorizationHeader());
