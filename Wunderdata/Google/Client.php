@@ -73,6 +73,17 @@ class Client
     }
 
     /**
+     * @param string $worksheetUrl
+     * @return array
+     */
+    public function loadWorksheetsByUrl($worksheetUrl)
+    {
+        $sheet = new Spreadsheet();
+        $sheet->setWorksheetsFeedUrl($worksheetUrl);
+        return $this->loadWorksheets($sheet);
+    }
+
+    /**
      * @param Worksheet $worksheet
      * @return CellFeed
      */
