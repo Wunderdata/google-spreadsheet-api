@@ -1,5 +1,5 @@
 {
-  "name": "wunderdata/google-spreadsheet-api2",
+  "name": "djamadeus/google-spreadsheet-api2",
   "type": "library",
   "description": "Google Spreadsheets API 3.0",
   "keywords": ["google","spreadsheet","docs","api"],
