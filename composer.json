@@ -7,8 +7,8 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Mike Roetgers",
-      "email": "mike@wunderdata.com"
+      "name": "Stefan Ladenthin",
+      "email": "stefan@wunderdata.com"
     }
   ],
   "require": {
